@@ -1,0 +1,179 @@
+body
+{
+  background-color: #FFFFFF;
+  font-family: verdana, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5
+{
+  color: #33ccff;
+  /* color: #c0d15e; */
+}
+#contentwrapper
+{
+  width: 820px;
+  margin: 20px auto 20px auto;  
+}
+
+.header
+{
+  width: 24em;
+  margin: 20px auto 20px auto;  
+}
+
+.header h1
+{
+  color: #33ccff;
+}
+
+.leftcol
+{
+  width: 380px;
+  margin: 0px auto 20px auto;
+  float: left;
+}
+
+#buttondiv
+{
+  text-align: center;
+  margin: 20px auto 0px auto;
+}
+
+
+.rightcol
+{
+  width: 380px;
+  margin: 0px auto 20px auto;
+  float: left;
+}
+
+#sensordata
+{
+  padding-bottom: 85px;
+}
+
+table 
+{
+  width: 100%;
+}
+
+table th
+{
+  font-weight: bold;
+  border-style: none none solid none;
+  border-color: #33ccff;
+  color: #33ccff;
+  text-align: left;
+}
+
+.tmpdata
+{
+  text-align: center;
+}
+
+.alternaterow
+{
+   background-color: #ddecff;
+}
+
+#boilerstate, #upperoffsetholder, #loweroffsetholder
+{
+  font-weight: bold;  
+}
+
+#upperoffset, #loweroffset
+{
+  font-weight: normal;
+}
+
+#boff
+{
+  font-weight: bold;
+  color: #c0d15e;  
+}
+
+#bon
+{
+  color: #ff5b5b;  
+}
+
+.heating
+{
+  color: #ff5b5b;  
+}
+
+.cooling
+{
+  color: #33ccff;
+}
+
+
+
+/* For the rounded boxes */
+
+.boxtop
+{
+    background: url(../images/boximages/boxtop.png) repeat-x;    
+}
+
+.boxtl
+{
+    width: 14px;
+    background: url(../images/boximages/tl.png) no-repeat top left;
+}
+
+.boxtr
+{
+    width: 14px;
+    background: url(../images/boximages/tr.png) no-repeat top right;
+}
+
+.boxcontentwrap
+{
+    background: url(../images/boximages/boxleft.png) repeat-y;
+}
+
+.boxcontent
+{
+    background: url(../images/boximages/boxright.png) repeat-y right;
+    min-height: 230px;    
+}
+
+
+
+.boxcontent div
+{
+  padding: 1px 20px 10px 20px;
+}
+
+.boxbottom
+{
+    background: url(../images/boximages/boxbottom.png) repeat-x;
+}
+
+.boxbl
+{
+    width: 14px;
+    background: url(../images/boximages/bl.png) no-repeat top left;
+}
+
+.boxbr
+{
+    width: 14px;
+    background: url(../images/boximages/br.png) no-repeat top right;
+}
+
+.boxtop, .boxtl, .boxtr, .boxbl, .boxbr, .boxbottom
+{
+    width : 100%;
+    height: 14px;
+    font-size: 1px;
+}
+
+#graphs
+{
+  text-align: center;
+}
+
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Temperature Monitor</title>
+    <link type="text/css" href="css/cupertino/jquery-ui-1.8.5.custom.css" rel="Stylesheet" />	    
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>    
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.8.5.custom.min.js"></script>    
+    <script type="text/javascript" src="scripts/jquery.tablesorter.min.js"></script> 
+    <script type="text/javascript" src="scripts/ajaxcalls.js"></script>           
+    <script type="text/javascript" src="scripts/formscript.js"></script>
+    <script type="text/javascript">
+    $(function() {
+      $("#tabs").tabs();
+      $("#radio" ).buttonset();
+      $("#graphimage").attr("src", "http://launchpad.dundeesmarthome.net/heating/adv-images/60min.php");
+      $("#radio input").click(function(){ 
+        //alert($(this).attr("id"));
+        var page = "http://launchpad.dundeesmarthome.net/heating/adv-images/" + $(this).attr("id") + ".php";
+        $("#graphimage").attr("src", page);
+      });
+    });    
+  	</script>
+  </head>
+  <body>
+    <div id="contentwrapper">
+      <div class="header"><h1>House Temperatures</h1></div>
+      <div id="tabs">
+        <ul>
+          <li><a href="#tab-overview">Overview</a></li>
+          <li><a href="#tab-advanced">Advanced</a></li>
+          <li><a href="#tab-graphs">Graphs</a></li>
+        </ul>
+        <div id="tab-overview">
+          <div class="boxtop"><div class="boxtl"><div class="boxtr"></div></div></div>
+          <div class="boxcontentwrap">
+            <div class="boxcontent">
+              <div class="sensordata">
+                 <!--Data here -->
+              </div>
+            </div>
+          </div>
+          <div class="boxbottom"><div class="boxbl"><div class="boxbr"></div></div></div>
+        </div>  
+        <div id="tab-advanced">
+          <!--Start of adv content -->
+          
+          <!-- CHANGE BOX -->          
+          <div class="leftcol">
+            <div class="boxtop"><div class="boxtl"><div class="boxtr"></div></div></div>
+              <div class="boxcontentwrap">
+                <div class="boxcontent">
+                  <div id="tempForm">
+                    <h3>Set Target</h3>
+                    <form id="update" action="ajaxpages/update.php" method="get">
+                    <div>
+                      <label for="id">Room:</label>
+                      <select id="id" name="id">
+                        <option value="1">Scott's Room</option>
+                        <option value="2">Huntly's Room</option>
+                        <option value="3">The Office</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="val">Value:</label>
+                      <select id="val" name="val">
+                        <option value="5">OFF</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>                    
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>          
+                      </select>              
+                    </div>
+                    <div id="buttondiv">
+                      <input type="submit" id="formbutton" value="Update!"/>
+                    </div>
+                  </form>
+                </div>
+                <div id="result"></div>
+              </div>
+            </div>
+            <div class="boxbottom"><div class="boxbl"><div class="boxbr"></div></div></div>
+          </div>    
+          <!-- /CHANGE BOX -->
+          
+          <!-- BOILER BOX -->
+          <div class="rightcol">
+            <div class="boxtop"><div class="boxtl"><div class="boxtr"></div></div></div>
+              <div class="boxcontentwrap">
+                <div class="boxcontent">
+                  <div id="sysinfo">
+                   <!-- load boiler data -->
+                </div>
+              </div>  
+            </div>
+            <div class="boxbottom"><div class="boxbl"><div class="boxbr"></div></div></div>
+          </div>          
+          <!-- /BOILER BOX -->
+          
+          <!-- DATA BOX -->
+          <div class="databox" style="clear:both;">
+            <div class="boxtop"><div class="boxtl"><div class="boxtr"></div></div></div>
+            <div class="boxcontentwrap">
+              <div class="boxcontent">
+                <div class="sensordata">
+                   <!--Data here -->
+                </div>
+              </div>
+            </div>
+            <div class="boxbottom"><div class="boxbl"><div class="boxbr"></div></div></div>             
+          </div>
+          <!-- /DATA BOX -->
+        </div> 
+        <!--end of adv content -->
+        
+        <!-- GRAPHS -->
+        <div id="tab-graphs">
+          <div id="graphs">
+
+            <form>
+            	<div id="radio">
+            		<input type="radio" id="60min" name="radio" checked="checked" /><label for="60min">60 Minutes</label>
+            		<input type="radio" id="3hr" name="radio"  /><label for="3hr">3 Hour</label>
+            		<input type="radio" id="6hr" name="radio" /><label for="6hr">6 Hour</label>
+            		<input type="radio" id="12hr" name="radio" /><label for="12hr">12 Hour</label>
+            		<input type="radio" id="24hr" name="radio" /><label for="24hr">24 Hour</label>				
+            	</div>
+            </form>
+
+            <img id="graphimage" />
+
+          </div>
+        </div>
+      </div><!-- end of tabbed content -->         
+    </div><!-- end of content wrap -->
+  </body>
+</html>
+

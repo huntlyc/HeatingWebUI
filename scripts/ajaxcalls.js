@@ -30,5 +30,6 @@
         $.get("ajaxpages/update.php", {id : $("#id").val(), val: $("#val").val()},
         function(){
           loadData();
+          loadBoilerData();
         });
       }
